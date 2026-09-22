@@ -70,22 +70,22 @@ Answer from private KB              Search public web (Tavily)
 ## Architecture
 
 ```text
-           Employee or HR administrator
-                      |
-                      v
-        Web interface / REST API (FastAPI)
-                      |
-                      v
+            Employee or HR administrator
+                         |
+                         v
+         Web interface / REST API (FastAPI)
+                         |
+                         v
           LangGraph HR support workflow
       +------------------+--------------------+
       |                  |                   |
       v                  v                   v
    Groq LLM       Pinecone private KB    Tavily web search
-   |                  |                   |
-   +------------------+-------------------+
-                      |
-                      v
- Grounded response, citations, trace, audit record
+      |                  |                   |
+      +------------------+-------------------+
+                         |
+                         v
+    Grounded response, citations, trace, audit record
 ```
 
 ## Technology stack
@@ -94,8 +94,8 @@ Answer from private KB              Search public web (Tavily)
 | --- | --- |
 | API and UI delivery | FastAPI, Jinja2, HTML, CSS, JavaScript |
 | Agent workflow | LangGraph |
-| LLM | Groq (`openai/gpt-oss-20b` by default) |
-| Embeddings | Sentence Transformers (`all-MiniLM-L6-v2` by default) |
+| LLM | Groq |
+| Embeddings | Sentence Transformers|
 | Vector database | Pinecone |
 | External search fallback | Tavily |
 | Document processing | LangChain loaders, PyPDF, python-docx |
